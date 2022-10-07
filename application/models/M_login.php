@@ -9,7 +9,7 @@ class M_login extends CI_Model
 		$query = $this->db->query("SELECT * FROM user WHERE username = '$username' ");
 
 		if ($query->num_rows() >= 1) {
-			return $query->result();
+			return $query->row();
 		}else {
 			return false;
 		}

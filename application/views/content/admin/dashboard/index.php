@@ -13,7 +13,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <h6 class="text-muted font-semibold">Jumlah Data Peminjam</h6>
-                                    <h3 class="font-extrabold mb-0"><?= $peminjam->nilai; ?></h3>
+                                    <h3 class="font-extrabold mb-0"><?= '10' ?></h3>
                                 </div>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <h6 class="text-muted font-semibold">Jumlah Aset Bagus</h6>
-                                    <h3 class="font-extrabold mb-0"><?= $aset->bagus; ?></h3>
+                                    <h3 class="font-extrabold mb-0"><?= '10' ?></h3>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <h6 class="text-muted font-semibold">Jumlah Aset Rusak</h6>
-                                    <h3 class="font-extrabold mb-0"><?= $aset->rusak; ?></h3>
+                                    <h3 class="font-extrabold mb-0"><?= '10' ?></h3>
                                 </div>
                             </div>
                         </div>

@@ -233,9 +233,9 @@
                         </div>
                         <div class="col-md-6">
                             <div class="position-relative">
-                                <h5 class="text-light mb-0">Masukkan Token Bagi Agen yang telah Registrasi</h5>
+                                <h5 class="text-light mb-0">Masukkan Username Bagi Agen yang telah Registrasi</h5>
                                 <form action="<?= base_url('login') ?>/checkuser" method="POST">
-                                    <input class="form-control bg-transparent border-light mt-3 w-100 py-3 ps-4 pe-5" name="username" type="text" placeholder="Your token">
+                                    <input class="form-control bg-transparent border-light mt-3 w-100 py-3 ps-4 pe-5" name="username" type="text" placeholder="Your Username">
                                     <button type="submit" class="btn btn-dark py-2 px-3 position-absolute top-0 end-0 mt-5 me-2">Login</button>
                                 </form>
                             </div>

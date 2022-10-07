@@ -34,7 +34,7 @@ class Login extends CI_Controller
             'role' => '2'
         ];
         $this->M_user->regist($data);
-        $this->session->set_flashdata('pesan', '"Good job!", "You clicked the button!", "success");');
+        $this->session->set_flashdata('pesan', 'Berhasil, Silahkan Tunggu Proses Verifikasi Akun Anda 1x24 Jam');
         redirect('login/regist');
     }
 
@@ -80,9 +80,8 @@ class Login extends CI_Controller
         // print_r($username); die;
 
         $cekuser = $this->M_login->cekuser($username);
-
         if ($cekuser) {
-            if ($cekuser['active'] != 1) {
+            if ($cekuser->active != 1) {
                 echo 'Akun Anda belum di verifikasi silahkan hubungi admin untun mengkonfirmasi';
             } else {
                 redirect('login');

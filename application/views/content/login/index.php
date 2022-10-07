@@ -26,6 +26,7 @@
             <div class="col-lg-4 col-12">
                 <div id="auth-left" style="padding: 5rem 1rem;">
                     <div style="text-align: center;">
+                        <img src="<?= base_url(); ?>/assets/images/logo/favicon.jpg" alt="Logo" width="30%">
                         <?php
                         if ($this->session->flashdata('pesan')) {
                             echo '<div class="alert alert-success alogin" role="alert">';
@@ -33,7 +34,6 @@
                             echo '</div>';
                         }
                         ?>
-                        <img src="<?= base_url(); ?>/assets/images/logo/favicon.jpg" alt="Logo" width="30%">
                         <h3 class="auth-title text-secondary" style="align-items: center;">Login</h3>
                     </div>
                     <form role="form" action="<?= base_url('login/prosses'); ?>" method="post">

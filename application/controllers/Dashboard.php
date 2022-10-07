@@ -15,9 +15,9 @@ class Dashboard extends CI_Controller
 	{
 		$data = [
 			'title' 		=> 'Dashboard',
-			'total_user'	=>	$this->M_admin->total_user(),
-			'aset'	=>	$this->M_admin->aset(),
-			'peminjam'	=>	$this->M_admin->peminjam(),
+			'total_user'	=>	'10',
+			'aset'	=>	'10',
+			'peminjam'	=>	'10',
 		];
 		
 		$this->load->view('layout/header', $data);

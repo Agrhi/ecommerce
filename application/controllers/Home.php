@@ -15,11 +15,5 @@ class Home extends CI_Controller
 			'title' 		=> 'Coffe'
 		];
 		$this->load->view('content/landingpage/index', $data);
-		
-		// $this->load->view('layout/header', $data);
-		// $this->load->view('layout/sidebar', $data);
-		// $this->load->view('layout/navbar');
-		// $this->load->view('content/admin/dashboard/index', $data);
-		// $this->load->view('layout/footer');
 	}
 }

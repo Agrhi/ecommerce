@@ -27,6 +27,13 @@
                 <div id="auth-left" style="padding: 1rem 1rem;">
                     <div style="text-align: center;">
                         <img src="<?= base_url(); ?>/assets/images/logo/favicon.jpg" alt="Logo" width="20%">
+                        <?php
+                        if ($this->session->flashdata('pesan')) {
+                            echo '<div class="alert alert-success   login" role="alert">';
+                            echo $this->session->flashdata('pesan');
+                            echo '</div>';
+                        }
+                        ?>
                         <h3 class="auth-title text-secondary" style="align-items: center;">Registrasi</h3>
                     </div>
                     <form role="form" action="<?= base_url('login/registrasi'); ?>" method="post">
@@ -58,6 +65,10 @@
                         </div>
                         <button class="btn btn-secondary btn-block btn-lg shadow-lg mt-2">Registrasi</button>
                     </form>
+                    <?php
+                        if ($this->session->flashdata('pesan')) { ?>
+                            <a href="<?= base_url('') ?>" class="btn btn-secondary btn-block btn-lg shadow-lg mt-2">Halaman Awal</a>
+                        <?php } ?>
                 </div>
             </div>
             <div class="col-lg-3 d-none d-lg-block">
@@ -73,21 +84,10 @@
 </body>
 
 <script>
-    $(document).ready(function() {
-        <?php
-        if ($this->session->flashdata('pesan')) { ?>
-            Swal.fire(<?= $this->session->flashdata('pesan') ?>);
-        <?php } ?>
-    });
-</script>
-
-
-<script>
     window.setTimeout(function() {
-        $(".alogin").fadeTo(500, 0).slideUp(500, function() {
+        $(".login").fadeTo(500, 0).slideUp(500, function() {
             $(this).remove();
         });
     }, 3000);
 </script>
-
 </html>
