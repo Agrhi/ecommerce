@@ -40,13 +40,22 @@
               <span>Laporan Bulanan</span>
             </a>
           </li>
+
+          <li class="sidebar-item has-sub <?= ($title === "Management User" || $title === "User Celler") ? 'active' : '' ?>">
+            <a href="#" class='sidebar-link'>
+              <i class="fa fa-users"></i>
+              <span>Management User</span>
+            </a>
+            <ul class="submenu <?= ($title === "Management User" || $title === "User Celler") ? 'active' : '' ?>">
+              <li class="submenu-item <?= ($title === "Management User") ? 'active' : '' ?>">
+                <a href="<?= base_url('management_user') ?>">Administrator</a>
+              </li>
+              <li class="submenu-item ">
+                <a href="component-badge.html">Penjual</a>
+              </li>
+            </ul>
+          </li>
           <?php if ($this->session->userdata('role') == 1) { ?>
-            <li class="sidebar-item  <?= ($title === "Management User") ? 'active' : '' ?>">
-              <a href="<?= base_url('management_user') ?>" class='sidebar-link'>
-                <i class="fa fa-users"></i>
-                <span>Management User</span>
-              </a>
-            </li>
           <?php } elseif ($this->session->userdata('role') == 2) { ?>
 
           <?php } ?>
