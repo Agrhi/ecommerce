@@ -20,38 +20,38 @@
             </a>
           </li>
 
-          <li class="sidebar-item  <?= ($title === "Data Aset Desa") ? 'active' : '' ?>">
-            <a href="<?= base_url('aset') ?>" class='sidebar-link'>
-              <i class="fa fa-window-restore"></i>
-              <span>Data Aset</span>
-            </a>
-          </li>
-
-          <li class="sidebar-item  <?= ($title === "Data Peminjaman Aset Desa") ? 'active' : '' ?>">
-            <a href="<?= base_url('peminjaman') ?>" class='sidebar-link'>
+          <li class="sidebar-item  <?= ($title === "Data Agen Penjual") ? 'active' : '' ?>">
+            <a href="<?= base_url('celler') ?>" class='sidebar-link'>
               <i class="fa fa-user-check"></i>
-              <span>Data Peminjaman</span>
+              <span>Data Agen Penjual</span>
             </a>
           </li>
 
-          <li class="sidebar-item  <?= ($title === "Laporan Bulanan") ? 'active' : '' ?>">
-            <a href="<?= base_url('laporan') ?>" class='sidebar-link'>
-              <i class="fa fa-print"></i>
-              <span>Laporan Bulanan</span>
+          <li class="sidebar-item  <?= ($title === "Data Penjualan") ? 'active' : '' ?>">
+            <a href="<?= base_url('penjualan') ?>" class='sidebar-link'>
+              <i class="fa fa-window-restore"></i>
+              <span>Data Penjualan</span>
             </a>
           </li>
 
-          <li class="sidebar-item has-sub <?= ($title === "Management User" || $title === "User Celler") ? 'active' : '' ?>">
+          <li class="sidebar-item  <?= ($title === "Data Pembeli") ? 'active' : '' ?>">
+            <a href="<?= base_url('pembeli') ?>" class='sidebar-link'>
+              <i class="fa fa-user-plus"></i>
+              <span>Data Pembeli</span>
+            </a>
+          </li>
+
+          <li class="sidebar-item has-sub <?= ($title === "Management User" || $title === "Management Penjual") ? 'active' : '' ?>">
             <a href="#" class='sidebar-link'>
               <i class="fa fa-users"></i>
               <span>Management User</span>
             </a>
-            <ul class="submenu <?= ($title === "Management User" || $title === "User Celler") ? 'active' : '' ?>">
+            <ul class="submenu <?= ($title === "Management User" || $title === "Management Penjual") ? 'active' : '' ?>">
               <li class="submenu-item <?= ($title === "Management User") ? 'active' : '' ?>">
                 <a href="<?= base_url('management_user') ?>">Administrator</a>
               </li>
-              <li class="submenu-item ">
-                <a href="component-badge.html">Penjual</a>
+              <li class="submenu-item <?= ($title === "Management Penjual") ? 'active' : '' ?>">
+                <a href="<?= base_url('management_penjual') ?>">Penjual</a>
               </li>
             </ul>
           </li>

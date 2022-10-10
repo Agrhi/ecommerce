@@ -6,7 +6,7 @@ class M_user extends CI_Model
 	public function get()
 	{
 
-		$sql = "SELECT * FROM `user`";
+		$sql = "SELECT * FROM `user` WHERE `role` = '1'";
 
 		$data = $this->db->query($sql);
 
@@ -50,6 +50,5 @@ class M_user extends CI_Model
 
 	public function regist($data)
 	{
-			
 	}
 }
