@@ -14,7 +14,7 @@ class Celler extends CI_Controller
 	public function index()
 	{
 		$data = [
-			'title' 		=> 'Data Agent Penjual',
+			'title' 		=> 'Data Agen Penjual',
 			'celler' => $this->M_celler->get_all_data()
 		];
 		$this->load->view('layout/header', $data);

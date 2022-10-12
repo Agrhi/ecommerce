@@ -31,7 +31,7 @@ class Login extends CI_Controller
             'username' => $this->input->post('username'),
             'password' => $this->input->post('password'),
             'active' => '0',
-            'role' => '2'
+            'role' => '0'
         ];
         $this->M_user->regist($data);
         $this->session->set_flashdata('pesan', 'Berhasil, Silahkan Tunggu Proses Verifikasi Akun Anda 1x24 Jam');

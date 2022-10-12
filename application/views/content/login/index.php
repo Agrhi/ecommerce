@@ -34,7 +34,7 @@
                             echo '</div>';
                         }
                         ?>
-                        <h3 class="auth-title text-secondary" style="align-items: center;">Login</h3>
+                        <h4 class="auth-title text-secondary" style="align-items: center;">Login</h4>
                     </div>
                     <form role="form" action="<?= base_url('login/prosses'); ?>" method="post">
                         <div class="form-group position-relative has-icon-left mb-3">
@@ -50,6 +50,7 @@
                             </div>
                         </div>
                         <button class="btn btn-secondary btn-block btn-lg shadow-lg mt-2">Log in</button>
+                        <a href="<?= base_url('') ?>" class="btn btn-secondary btn-block btn-lg shadow-lg mt-2">Halaman Utama</a>
                     </form>
                 </div>
             </div>

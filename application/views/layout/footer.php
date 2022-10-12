@@ -1,10 +1,10 @@
 <footer>
   <div class="footer clearfix text-muted">
     <div class="float-start">
-      <p>2022 &copy; SIPEDES</p>
+      <p>2022 &copy; Toratima</p>
     </div>
     <div class="float-end">
-      <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by SIPEDES</a></p>
+      <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by Toratima Coffe</a></p>
     </div>
   </div>
 </footer>

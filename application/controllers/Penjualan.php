@@ -24,6 +24,16 @@ class Penjualan extends CI_Controller
 		$this->load->view('layout/footer');
 	}
 
+	public function edit()
+	{
+		$data = [
+			'stok' => $this->input->post('stok'),
+			'harga' => $this->input->post('harga'),
+		];
+		$this->session->set_flashdata('pesan', 'Data Berhasil Update data Jualan');
+		redirect('penjualan');
+	}
+
 	// public function get($id, $bulan = '')
 	// {
 	// 	if ($bulan == '') {

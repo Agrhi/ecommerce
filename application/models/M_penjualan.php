@@ -5,10 +5,12 @@ class M_penjualan extends CI_Model
 {
 	public function get_all_data()
 	{
-		$this->db->select('*');
-		$this->db->from('jualan');
-		$this->db->order_by('idjualan', 'asc');
-		return $this->db->get()->result();
+		$sql = "SELECT * FROM `jualan`
+		JOIN celler ON celler.idceller = jualan.idceller;";
+
+		$data = $this->db->query($sql);
+
+		return $data->result();
 	}
 
 	// public function getbulan($bln)
