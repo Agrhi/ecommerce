@@ -10,6 +10,16 @@
 </footer>
 </div>
 </div>
+
+<script>
+    <?php
+    if (isset($this->session->swetalert)) {
+    ?>
+        Swal.fire(<?= $this->session->swetalert ?>);
+    <?php
+    }
+    ?>
+</script>
 <script src="<?= base_url(); ?>/assets/js/bootstrap.js"></script>
 <script src="<?= base_url(); ?>/assets/js/app.js"></script>
 <script src="<?= base_url(); ?>/assets/extensions/jquery/jquery.min.js"></script>

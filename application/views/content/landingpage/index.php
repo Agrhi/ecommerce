@@ -9,7 +9,7 @@
     <meta content="" name="description">
 
     <link rel="shortcut icon" href="<?= base_url(); ?>/asset/img/logo.jpg" type="image/x-icon">
-  <link rel="shortcut icon" href="<?= base_url(); ?>/asset/img/logo.jpg" type="image/png">
+    <link rel="shortcut icon" href="<?= base_url(); ?>/asset/img/logo.jpg" type="image/png">
 
     <!-- Favicon -->
     <link href="<?= base_url(); ?>/asset/img/favicon.ico" rel="icon">
@@ -32,6 +32,9 @@
 
     <!-- Template Stylesheet -->
     <link href="<?= base_url(); ?>/asset/css/style.css" rel="stylesheet">
+
+    <!-- CDN SwetAlert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -235,7 +238,7 @@
                             <div class="position-relative">
                                 <h5 class="text-light mb-0">Masukkan Username Bagi Agen yang telah Registrasi</h5>
                                 <form action="<?= base_url('login') ?>/checkuser" method="POST">
-                                    <input class="form-control bg-transparent border-light mt-3 w-100 py-3 ps-4 pe-5" name="username" type="text" placeholder="Your Username">
+                                    <input class="form-control bg-transparent border-light mt-3 w-100 py-3 ps-4 pe-5" name="username" type="text" placeholder="Your Username" oninvalid="this.setCustomValidity('Masukan Username Terlebih Dahulu!')" oninput="setCustomValidity('')" required>
                                     <button type="submit" class="btn btn-dark py-2 px-3 position-absolute top-0 end-0 mt-5 me-2">Login</button>
                                 </form>
                             </div>
@@ -304,6 +307,15 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+    <script>
+        <?php
+        if (isset($this->session->swetalert)) {
+        ?>
+            Swal.fire(<?= $this->session->swetalert ?>);
+        <?php
+        }
+        ?>
+    </script>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

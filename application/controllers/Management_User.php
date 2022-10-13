@@ -47,7 +47,7 @@ class Management_User extends CI_Controller
 				'active' => $this->input->post('active'),
 			];
 			$this->M_user->insert($data);
-			$this->session->set_flashdata('pesan', 'Data Berhasil Di Tambahkan !!!');
+			$this->session->set_flashdata('swetalert', '`Good job!`, `Data Berhasil Di Tambahkan !`, `success`');
 			redirect('Management_User');
 		}
 	}
@@ -62,7 +62,7 @@ class Management_User extends CI_Controller
 			'role' => $this->input->post('role'),
 		);
 		$this->M_user->update($data);
-		$this->session->set_flashdata('pesan', 'Data Berhasil Di Edit !!!');
+		$this->session->set_flashdata('swetalert', '`Good job!`, `Data Berhasil Di Edit!`, `success`');
 		redirect('Management_User');
 	}
 
@@ -70,7 +70,7 @@ class Management_User extends CI_Controller
 	{
 		$data = array('iduser' => $iduser);
 		$this->M_user->delete($data);
-		$this->session->set_flashdata('pesan', 'Data Berhasil Di Hapus !!!');
+		$this->session->set_flashdata('swetalert', '`Good job!`, `Data Berhasil Di Hapus!`, `success`');
 		redirect('Management_User');
 	}
 
@@ -78,10 +78,10 @@ class Management_User extends CI_Controller
 	{
 		$result = $this->M_user->nonaktif($id);
 		if ($result > 0) {
-			$this->session->set_flashdata('pesan', 'Akun Berhasil di Non Aktifkan');
+			$this->session->set_flashdata('swetalert', '`Good job!`, `Akun Berhasil di Non Aktifkan`, `success`');
 			redirect('Management_User');
 		} else {
-			$this->session->set_flashdata('error', 'Akun Gagal di Non Aktifkan');
+			$this->session->set_flashdata('swetalert', '`Upsss!`, `Akun Gagal di Non Aktifkan`, `error`');
 			redirect('Management_User');
 		}
 	}
@@ -90,10 +90,10 @@ class Management_User extends CI_Controller
 	{
 		$result = $this->M_user->aktif($id);
 		if ($result > 0) {
-			$this->session->set_flashdata('pesan', 'Akun Berhasil di Aktifkan');
+			$this->session->set_flashdata('swetalert', '`Good job!`, `Akun Berhasil di Aktifkan`, `success`');
 			redirect('Management_User');
 		} else {
-			$this->session->set_flashdata('error', 'Akun Gagal di Aktifkan');
+			$this->session->set_flashdata('swetalert', '`Upsss!`, `Akun Gagal di Aktifkan`, `error`');
 			redirect('Management_User');
 		}
 	}

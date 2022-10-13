@@ -50,7 +50,7 @@ class M_user extends CI_Model
 
 	public function regist($data)
 	{
-		$sql = "INSERT INTO `celler`(`idceller`, `nama`, `namastan`, `alamat`, `nohp`) VALUES ('','" . $data['nama'] . "','" . $data['namastan'] . "','" . $data['alamat'] . "','" . $data['nohp'] . "')";
+		$sql = "INSERT INTO `celler`(`idceller`, `nama`, `nik`, `namastan`, `alamat`, `nohp`, `sku`) VALUES ('','" . $data['nama'] . "','" . $data['nik'] . "','" . $data['namastan'] . "','" . $data['alamat'] . "','" . $data['nohp'] . "','" . $data['sku'] . "')";
 		$this->db->query($sql);
 		$id = $this->db->insert_id();
 		$sql1 = "INSERT INTO `user`(`iduser`, `nama`, `username`, `pass`, `idceller`, `role`, `active`) VALUES ('','" . $data['nama'] . "','" . $data['username'] . "','" . $data['password'] . "','" . $id . "','" . $data['role'] . "','" . $data['active'] . "')";

@@ -35,7 +35,7 @@ class Management_Penjual extends CI_Controller
 			'pass' => $this->input->post('pass'),
 		);
 		$this->M_user->update($data);
-		$this->session->set_flashdata('pesan', 'Data Berhasil Di Reset !!!');
+		$this->session->set_flashdata('swetalert', '`Good job!`, `Data Berhasil Di Edit!`, `success`');
 		redirect('Management_Penjual');
 	}
 
@@ -43,10 +43,10 @@ class Management_Penjual extends CI_Controller
 	{
 		$result = $this->M_user->nonaktif($id);
 		if ($result > 0) {
-			$this->session->set_flashdata('pesan', 'Akun Berhasil di Non Aktifkan');
+			$this->session->set_flashdata('swetalert', '`Good job!`, `Akun Berhasil di Non Aktifkan`, `success`');
 			redirect('Management_Penjual');
 		} else {
-			$this->session->set_flashdata('error', 'Akun Gagal di Non Aktifkan');
+			$this->session->set_flashdata('swetalert', '`Upsss!`, `Akun Gagal di Non Aktifkan`, `error`');
 			redirect('Management_Penjual');
 		}
 	}
@@ -55,10 +55,10 @@ class Management_Penjual extends CI_Controller
 	{
 		$result = $this->M_user->aktif($id);
 		if ($result > 0) {
-			$this->session->set_flashdata('pesan', 'Akun Berhasil di Aktifkan');
+			$this->session->set_flashdata('swetalert', '`Good job!`, `Akun Berhasil di Aktifkan`, `success`');
 			redirect('Management_Penjual');
 		} else {
-			$this->session->set_flashdata('error', 'Akun Gagal di Aktifkan');
+			$this->session->set_flashdata('swetalert', '`Upsss!`, `Akun Gagal di Aktifkan`, `error`');
 			redirect('Management_Penjual');
 		}
 	}

@@ -1611,13 +1611,13 @@
 
         </g>
       </g>
-      <text opacity="0.6" x="15" y="257" fill="#000" font-family="Viga" font-size="25">SIPEDES
+      <text opacity="0.6" x="15" y="257" fill="#000" font-family="Viga" font-size="25">Toratima Coffe
         <tspan x="20" y="290">No Access for this page</tspan>
         <tspan x="100" y="357" fill="#000" font-size="65">403</tspan>
         <tspan x="93" y="381.2" fill="#000" font-size="15">Access Forbidden.</tspan>
       </text>
 
-      <text x="15" y="255" fill="#6BA184" font-family="Viga" font-size="25">SIPEDES
+      <text x="15" y="255" fill="#6BA184" font-family="Viga" font-size="25">Toratima Coffe
         <tspan x="20" y="290">No Access for this page</tspan>
         <tspan x="100" y="355" fill="#BF3E73" font-size="65">403</tspan>
         <a href="<?= base_url('dashboard') ?>">

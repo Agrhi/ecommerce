@@ -12,6 +12,9 @@
 
     <!-- CDN Js -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <!-- CDN SwetAlert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -27,13 +30,6 @@
                 <div id="auth-left" style="padding: 5rem 1rem;">
                     <div style="text-align: center;">
                         <img src="<?= base_url(); ?>/assets/images/logo/favicon.jpg" alt="Logo" width="30%">
-                        <?php
-                        if ($this->session->flashdata('pesan')) {
-                            echo '<div class="alert alert-success alogin" role="alert">';
-                            echo $this->session->flashdata('pesan');
-                            echo '</div>';
-                        }
-                        ?>
                         <h4 class="auth-title text-secondary" style="align-items: center;">Login</h4>
                     </div>
                     <form role="form" action="<?= base_url('login/prosses'); ?>" method="post">
@@ -67,11 +63,13 @@
 </body>
 
 <script>
-    window.setTimeout(function() {
-        $(".alogin").fadeTo(500, 0).slideUp(500, function() {
-            $(this).remove();
-        });
-    }, 3000);
+    <?php
+    if (isset($this->session->swetalert)) {
+    ?>
+        Swal.fire(<?= $this->session->swetalert ?>);
+    <?php
+    }
+    ?>
 </script>
 
 </html>

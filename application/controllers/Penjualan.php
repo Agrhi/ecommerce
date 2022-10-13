@@ -30,7 +30,7 @@ class Penjualan extends CI_Controller
 			'stok' => $this->input->post('stok'),
 			'harga' => $this->input->post('harga'),
 		];
-		$this->session->set_flashdata('pesan', 'Data Berhasil Update data Jualan');
+		$this->session->set_flashdata('swetalert', '`Good job!`, `Data Berhasil DiUpdate !`, `success`');
 		redirect('penjualan');
 	}
 

@@ -4,25 +4,7 @@
             <?= $title; ?>
         </div>
         <div class="card-body">
-            <div style="text-align: right;">
-                <button type="button" class="btn btn-outline-primary" onclick="tes()">Tambah Data</button>
-            </div>
-            <br>
             <?php echo validation_errors(); ?>
-            <?php
-            if ($this->session->flashdata('pesan')) {
-                echo '<div class="alert alert-success" role="alert">
-                        Success ! ';
-                echo $this->session->flashdata('pesan');
-                echo '</div>';
-            }
-            if ($this->session->flashdata('error')) {
-                echo '<div class="alert alert-danger" role="alert">
-                        Error ! ';
-                echo $this->session->flashdata('error');
-                echo '</div>';
-            }
-            ?>
             <table class="table" id="user">
                 <thead>
                     <tr>
@@ -105,6 +87,17 @@
                                 <div class="form-group">
                                     <label>Harga</label>
                                     <input type="number" name="harga" value="<?= $pjul->harga ?>" class="form-control" placeholder="Harga" oninvalid="this.setCustomValidity('Harga Wajib Di Isi !!!')" oninput="setCustomValidity('')" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Gambar</label>
+                                    <input type="file" name="gambar" class="form-control" id="preview_gambar" oninvalid="this.setCustomValidity('Gambar Wajib Diisi !!!')" oninput="setCustomValidity('')" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mt-3">
+                                <div class="form-group">
+                                    <img src="<?= base_url('assets/gambar/nofoto.png') ?>" id="gambar_load" width="200px">
                                 </div>
                             </div>
                         </div>
@@ -228,9 +221,18 @@
 <php } ?> -->
         <!-- End Modal -->
 
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
-            function tes() {
-                Swal.fire('Any fool can use a computer');
+            function bacaGambar(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        $('#gambar_load').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
             }
+
+            $('#preview_gambar').change(function() {
+                bacaGambar(this);
+            });
         </script>
