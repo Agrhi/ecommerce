@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2022 at 02:40 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Oct 16, 2022 at 06:57 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,18 +29,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `celler` (
   `idceller` int(11) NOT NULL,
+  `nik` varchar(16) NOT NULL,
   `nama` varchar(30) NOT NULL,
   `namastan` varchar(30) NOT NULL,
   `alamat` varchar(30) NOT NULL,
-  `nohp` varchar(15) NOT NULL
+  `nohp` varchar(15) NOT NULL,
+  `sku` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `celler`
 --
 
-INSERT INTO `celler` (`idceller`, `nama`, `namastan`, `alamat`, `nohp`) VALUES
-(1, 'penjual 1', 'penjual', 'kkkkk', '081242943036');
+INSERT INTO `celler` (`idceller`, `nik`, `nama`, `namastan`, `alamat`, `nohp`, `sku`) VALUES
+(1, '1', 'cek', 'cek', 'asd', '1', 'sku-1.png');
 
 -- --------------------------------------------------------
 
@@ -56,6 +58,13 @@ CREATE TABLE `jualan` (
   `jual` varchar(10) NOT NULL,
   `gambar` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `jualan`
+--
+
+INSERT INTO `jualan` (`idjualan`, `idceller`, `stok`, `harga`, `jual`, `gambar`) VALUES
+(1, 1, '1', '1', '', 'jualan-1.png');
 
 -- --------------------------------------------------------
 
@@ -82,8 +91,8 @@ CREATE TABLE `pembeli` (
 CREATE TABLE `user` (
   `iduser` int(5) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `username` varchar(250) NOT NULL,
-  `pass` varchar(250) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `pass` varchar(50) NOT NULL,
   `idceller` int(5) DEFAULT NULL,
   `role` int(1) NOT NULL,
   `active` int(1) NOT NULL
@@ -94,8 +103,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`iduser`, `nama`, `username`, `pass`, `idceller`, `role`, `active`) VALUES
-(1, 'Agrhi', 'admin', 'admin', 0, 1, 1),
-(4, 'penjual 1', 'penjual2', 'penjual', 1, 0, 1);
+(1, 'Agrhi', 'admin', 'admin', NULL, 1, 1),
+(2, 'cek', '123', '123', 1, 0, 1);
 
 --
 -- Indexes for dumped tables
@@ -105,7 +114,14 @@ INSERT INTO `user` (`iduser`, `nama`, `username`, `pass`, `idceller`, `role`, `a
 -- Indexes for table `celler`
 --
 ALTER TABLE `celler`
-  ADD PRIMARY KEY (`idceller`);
+  ADD PRIMARY KEY (`idceller`),
+  ADD UNIQUE KEY `nik` (`nik`);
+
+--
+-- Indexes for table `jualan`
+--
+ALTER TABLE `jualan`
+  ADD PRIMARY KEY (`idjualan`);
 
 --
 -- Indexes for table `pembeli`
@@ -130,6 +146,12 @@ ALTER TABLE `celler`
   MODIFY `idceller` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `jualan`
+--
+ALTER TABLE `jualan`
+  MODIFY `idjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `pembeli`
 --
 ALTER TABLE `pembeli`
@@ -139,7 +161,7 @@ ALTER TABLE `pembeli`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `iduser` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `iduser` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

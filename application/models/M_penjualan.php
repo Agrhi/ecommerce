@@ -13,50 +13,20 @@ class M_penjualan extends CI_Model
 		return $data->result();
 	}
 
-	// public function getbulan($bln)
-	// {
-	// 	$this->db->select('*');
-	// 	$this->db->from('peminjaman');
-	// 	$this->db->join('aset', 'aset.idaset = peminjaman.idaset', 'left');
-	// 	$this->db->like('tglpinjam', $bln);
-	// 	return $this->db->get()->result();
-	// }
+	public function get_data($idjualan) 
+	{
+		$sql = "SELECT * FROM `jualan` WHERE idjualan = '".$idjualan."'";
 
-	// public function get($id)
-	// {
-	// 	$this->db->from('peminjaman');
-	// 	$this->db->where('idpeminjaman', $id);
-	// 	return $this->db->get()->row();
-	// }
+		$data = $this->db->query($sql);
 
-	// public function get_detail($idpeminjaman)
-	// {
-	// 	$this->db->from('peminjaman');
-	// 	$this->db->where('idpeminjaman', $idpeminjaman);
-	// 	return $this->db->get()->row();
-	// }
+		return $data->row();
+	}
+	
 
-	// public function get_data($idpeminjaman)
-	// {
-	// 	$this->db->from('peminjaman');
-	// 	$this->db->where('idpeminjaman', $idpeminjaman);
-	// 	return $this->db->get()->row();
-	// }
+	public function edit($data)
+	{
+		$this->db->where('idjualan', $data['idjualan']);
+		$this->db->update('jualan', $data);
+	}
 
-	// public function add($data)
-	// {
-	// 	$this->db->insert('peminjaman', $data);
-	// }
-
-	// public function edit($data)
-	// {
-	// 	$this->db->where('idpeminjaman', $data['idpeminjaman']);
-	// 	$this->db->update('peminjaman', $data);
-	// }
-
-	// public function delete($data)
-	// {
-	// 	$this->db->where('idpeminjaman', $data['idpeminjaman']);
-	// 	$this->db->delete('peminjaman', $data);
-	// }
 }

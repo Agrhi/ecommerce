@@ -5,18 +5,10 @@
         </div>
         <div class="card-body">
             <div style="text-align: right;">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modaladdaset">Tambah Data</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modaladdceller">Tambah Data</button>
             </div>
             <br>
             <?php echo validation_errors(); ?>
-            <?php
-            if ($this->session->flashdata('pesan')) {
-                echo '<div class="alert alert-success" role="alert">
-                        Success ! ';
-                echo $this->session->flashdata('pesan');
-                echo '</div>';
-            }
-            ?>
             <table class="table" id="aset">
                 <thead>
                     <tr>
@@ -42,7 +34,7 @@
                         <td><?= $cel->nohp; ?></td>
                         <td>
                             <button class="btn icon btn-success" type="button" data-bs-toggle="modal" data-bs-target="#edit<?= $cel->idceller ?>"><i class="bi bi-pencil"></i></button>
-                            <button class="btn icon btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#delete<?= $cel->idceller ?>"><i class="fa fa-trash-alt"></i></button>
+                            <!-- <button class="btn icon btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#delete<= $cel->idceller ?>"><i class="fa fa-trash-alt"></i></button> -->
                         </td>
                     </tr>
                 <?php } ?>
@@ -54,107 +46,153 @@
 
 </section>
 
-<!-- Modal Tambah Aset -->
-<!-- <div class="modal fade text-left" id="modaladdaset" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+<!-- Modal Add -->
+<div class="modal fade" id="modaladdceller" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel33">Tambah Aset </h4>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <i data-feather="x"></i>
-                </button>
+                <h5 class="modal-title" id="exampleModalLabel">Add Agen Penjual</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?= base_url('aset') ?>/add" method="POST">
-                <div class="modal-body">
-                    <label>Nama Barang : </label>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="namaaset" id="namaaset" placeholder="Nama Barang" oninvalid="this.setCustomValidity('Nama Lengkap Wajib Di Isi !!!')" oninput="setCustomValidity('')" required>
-                    </div>
-                    <label>Stok : </label>
-                    <div class="form-group">
-                        <input type="number" class="form-control" name="stok" id="stok" placeholder="Stok" oninvalid="this.setCustomValidity('Username Wajib Di Isi !!!')" oninput="setCustomValidity('')" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
-                        <i class="bx bx-x d-block d-sm-none"></i>
-                        <span class="d-none d-sm-block">Close</span>
-                    </button>
-                    <button type="submit" class="btn btn-primary ml-1" data-bs-dismiss="modal">
-                        <i class="bx bx-check d-block d-sm-none"></i>
-                        <span class="d-none d-sm-block">Simpan</span>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div> -->
-<!-- End Modal -->
+            <div class="modal-body">
 
-<!-- Modal Ubah Aset -->
-<!-- <php foreach ($aset as $as) { ?>
-    <div class="modal fade text-left" id="edit<?= $as->idaset ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel33">Ubah Aset </h4>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <i data-feather="x"></i>
-                    </button>
+                <?php echo form_open_multipart('celler/add'); ?>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>Nama Toko</label>
+                        <input type="text" name="namastan" class="form-control" placeholder="Nama Toko" oninvalid="this.setCustomValidity('Nama Toko Wajib Di Isi !!!')" oninput="setCustomValidity('')" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">Nama Pemilik</label>
+                        <input type="text" name="nama" class="form-control" placeholder="Nama Pemilik" oninvalid="this.setCustomValidity('Nama Pemilik Wajib Di Isi !!!')" oninput="setCustomValidity('')" required>
+                    </div>
                 </div>
-                <form action="<?= base_url('aset/edit/' . $as->idaset) ?>" method="POST">
-                    <div class="modal-body">
-                        <label>Nama Barang : </label>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="">NIK</label>
+                        <input type="number" name="nik" class="form-control" placeholder="NIK" oninvalid="this.setCustomValidity('NIK Wajib Di Isi !!!')" oninput="setCustomValidity('')" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">Nomor Hp</label>
+                        <input type="number" name="nohp" class="form-control" placeholder="Nomor Hp" oninvalid="this.setCustomValidity('Nomor Hp Wajib Di Isi !!!')" oninput="setCustomValidity('')" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="">Alamat</label>
+                        <input type="text" name="alamat" class="form-control" placeholder="Alamat" oninvalid="this.setCustomValidity('Alamat Wajib Di Isi !!!')" oninput="setCustomValidity('')" required>
+                    </div>
+                    <div class="form-group col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="namaaset" value="<?= $as->namaaset ?>" placeholder="Nama Barang" oninvalid="this.setCustomValidity('Nama Lengkap Wajib Di Isi !!!')" oninput="setCustomValidity('')" required>
-                        </div>
-                        <label>Stok : </label>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="stok" value="<?= $as->stok ?>" placeholder="Stok" oninvalid="this.setCustomValidity('Username Wajib Di Isi !!!')" oninput="setCustomValidity('')" required>
+                            <label>SKU</label>
+                            <input type="file" name="gambar" class="form-control" id="preview_gambar" oninvalid="this.setCustomValidity('Gambar Wajib Diisi !!!')" oninput="setCustomValidity('')" required>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
-                            <i class="bx bx-x d-block d-sm-none"></i>
-                            <span class="d-none d-sm-block">Close</span>
-                        </button>
-                        <button type="submit" class="btn btn-primary ml-1" data-bs-dismiss="modal">
-                            <i class="bx bx-check d-block d-sm-none"></i>
-                            <span class="d-none d-sm-block">Ubah</span>
-                        </button>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="">Username</label>
+                        <input type="text" name="username" class="form-control" placeholder="Username" oninvalid="this.setCustomValidity('Username Wajib Di Isi !!!')" oninput="setCustomValidity('')" required>
                     </div>
-                </form>
+                    <div class="form-group col-md-6">
+                        <label for="">Password</label>
+                        <input type="password" name="password" class="form-control" placeholder="Password" oninvalid="this.setCustomValidity('Nama Lengkap Wajib Di Isi !!!')" oninput="setCustomValidity('')" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4 mt-3">
+                        <div class="form-group">
+                            <img src="<?= base_url('assets/gambar/nofoto.png') ?>" id="gambar_load" width="200px">
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+            <?php echo form_close();?>
         </div>
     </div>
-<php } ?> -->
+</div>
 <!-- End Modal -->
 
-<!-- Modal Hapus -->
-<!-- <php foreach ($aset as $as) { ?>
-    <div class="modal fade text-left" id="delete<?= $as->idaset ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel33">Hapus Aset </h4>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <i data-feather="x"></i>
-                    </button>
+<!-- Modal Edit -->
+<?php foreach ($celler as $cel) { ?>
+
+<div class="modal fade" id="edit<?= $cel->idceller ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Data Agen</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <?php
+                echo form_open_multipart('celler/edit/' . $cel->idceller);
+                ?>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>Nama Toko</label>
+                        <input type="text" name="namastan" value="<?= $cel->namastan ?>" class="form-control" placeholder="Nama Toko" oninvalid="this.setCustomValidity('Nama Toko Wajib Di Isi !!!')" oninput="setCustomValidity('')" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">Nama Pemilik</label>
+                        <input type="text" name="nama" value="<?= $cel->nama ?>" class="form-control" placeholder="Nama Pemilik" oninvalid="this.setCustomValidity('Nama Pemilik Wajib Di Isi !!!')" oninput="setCustomValidity('')" required>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <span>Apakah Anda Yakin Ingin Menghapus Data <?= $as->namaaset; ?> ?</span>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="">NIK</label>
+                        <input type="number" name="nik" value="<?= $cel->nik ?>" class="form-control" placeholder="NIK" oninvalid="this.setCustomValidity('NIK Wajib Di Isi !!!')" oninput="setCustomValidity('')" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">Nomor Hp</label>
+                        <input type="number" name="nohp" value="<?= $cel->nohp ?>" class="form-control" placeholder="Nomor Hp" oninvalid="this.setCustomValidity('Nomor Hp Wajib Di Isi !!!')" oninput="setCustomValidity('')" required>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
-                        <i class="bx bx-x d-block d-sm-none"></i>
-                        <span class="d-none d-sm-block">Close</span>
-                    </button>
-                    <a href="<?= base_url('aset/delete/' . $as->idaset) ?>" class="btn bg-primary text-white">Hapus</a>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="">Alamat</label>
+                        <input type="text" name="alamat" value="<?= $cel->alamat ?>" class="form-control" placeholder="Alamat" oninvalid="this.setCustomValidity('Alamat Wajib Di Isi !!!')" oninput="setCustomValidity('')" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <div class="form-group">
+                            <label>SKU</label>
+                            <input type="file" name="gambar" class="form-control" id="preview_gambar" oninvalid="this.setCustomValidity('Gambar Wajib Diisi !!!')" oninput="setCustomValidity('')">
+                        </div>
+                    </div>
+                </div>
+
+            <div class="row">
+                <div class="col-sm-4 mt-3">
+                    <div class="form-group">
+                        <img src="<?= base_url('assets/gambar/' . $cel->sku) ?>" id="gambar_load" width="200px">
+                    </div>
                 </div>
             </div>
+
         </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </div>
+        <?php
+        echo form_close();
+        ?>
     </div>
-<php } ?> -->
+</div>
+</div>
+<?php } ?>
 <!-- End Modal -->
 
 
@@ -163,4 +201,30 @@
         $('#aset').DataTable();
         $('#asetr').DataTable();
     });
+</script>
+
+<script>
+    function bacaGambar(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#gambar_load').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $('#preview_gambar').change(function() {
+        bacaGambar(this);
+    });
+</script>
+
+<script>
+    <?php
+    if (isset($this->session->swetalert)) {
+    ?>
+        Swal.fire(<?= $this->session->swetalert ?>);
+    <?php
+    }
+    ?>
 </script>
