@@ -13,11 +13,13 @@ class Dashboard extends CI_Controller
 
 	public function index()
 	{
+		$celler = $this->session->userdata('idceller');
 		$data = [
 			'title' 		=> 'Dashboard',
-			'total_user'	=>	'10',
-			'aset'	=>	'10',
-			'peminjam'	=>	'10',
+			'total_user'	=>	$this->M_admin->total_user(),
+			'pembeli'	=>	$this->M_admin->pembeli($celler),
+			'penjual'	=>	$this->M_admin->penjual($celler),
+			'celler'	=>	$this->M_admin->celler(),
 		];
 		
 		$this->load->view('layout/header', $data);

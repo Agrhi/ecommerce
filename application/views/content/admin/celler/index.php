@@ -4,10 +4,14 @@
             <?= $title; ?>
         </div>
         <div class="card-body">
+        <?php if ($this->session->userdata('role') == 1) { ?>
             <div style="text-align: right;">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modaladdceller">Tambah Data</button>
             </div>
             <br>
+            <?php } elseif ($this->session->userdata('role') == 2) { ?>
+
+<?php } ?>
             <?php echo validation_errors(); ?>
             <table class="table" id="aset">
                 <thead>

@@ -4,10 +4,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class M_celler extends CI_Model
 {
 
-	public function get_all_data()
+	public function get_all_data($celler)
 	{
 		$this->db->from('celler');
 		$this->db->order_by('idceller', 'asc');
+		if ($celler == '') {
+		} else {
+			$this->db->where('idceller', $celler);
+		}
 		return $this->db->get()->result();
 	}
 

@@ -79,6 +79,7 @@ class Login extends CI_Controller
                         $this->session->set_userdata('name', $row->nama);
                         $this->session->set_userdata('username', $row->username);
                         $this->session->set_userdata('role', $row->role);
+                        $this->session->set_userdata('idceller', $row->idceller);
                         redirect('dashboard');
                     } else {
                         $this->session->set_flashdata('swetalert', '`Upsss!`, `Maaf User Anda Belum Aktif`, `error`');

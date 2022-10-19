@@ -12,8 +12,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Jumlah Data Peminjam</h6>
-                                    <h3 class="font-extrabold mb-0"><?= '10' ?></h3>
+                                    <h6 class="text-muted font-semibold">Jumlah Data Agen Penjual</h6>
+                                    <h3 class="font-extrabold mb-0"><?= $celler; ?></h3>
                                 </div>
                             </div>
                         </div>
@@ -29,8 +29,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Jumlah Aset Bagus</h6>
-                                    <h3 class="font-extrabold mb-0"><?= '10' ?></h3>
+                                    <h6 class="text-muted font-semibold">Jumlah Data Pembeli</h6>
+                                    <h3 class="font-extrabold mb-0"><?= $pembeli; ?></h3>
                                 </div>
                             </div>
                         </div>
@@ -46,8 +46,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Jumlah Aset Rusak</h6>
-                                    <h3 class="font-extrabold mb-0"><?= '10' ?></h3>
+                                    <h6 class="text-muted font-semibold">Jumlah Data Penjualan</h6>
+                                    <h3 class="font-extrabold mb-0"><?= $penjual; ?></h3>
                                 </div>
                             </div>
                         </div>

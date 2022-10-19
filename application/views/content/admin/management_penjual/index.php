@@ -41,7 +41,7 @@
                             <?php } ?>
                         </td>
                         <td>
-                            <button class="btn icon btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#reset<?= $pjl->iduser ?>"><i class="bi bi-bootstrap-reboot"></i></button>
+                            <button class="btn icon btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#reset<?= $pjl->iduser ?>"><i class="bi bi-arrow-clockwise"></i></button>
                         </td>
                     </tr>
                 <?php } ?>
@@ -55,7 +55,7 @@
 
 <!-- Modal Ubah User -->
 <?php foreach ($penjual as $pjl) { ?>
-    <div class="modal fade text-left" id="reset<?= $pjl->iduser ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
+    <div class="modal fade text-left" id="reset<?= $pjl->iduser ?>" tabind<x="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">

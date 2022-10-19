@@ -13,9 +13,10 @@ class Penjualan extends CI_Controller
 
 	public function index()
 	{
+        $celler = $this->session->userdata('idceller');
 		$data = [
 			'title' => 'Data Penjualan',
-			'penjualan' => $this->M_penjualan->get_all_data()
+			'penjualan' => $this->M_penjualan->get_all_data($celler)
 		];
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/sidebar', $data);

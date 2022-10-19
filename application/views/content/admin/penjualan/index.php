@@ -134,13 +134,3 @@
         bacaGambar(this);
     });
 </script>
-
-<script>
-    <?php
-    if (isset($this->session->swetalert)) {
-    ?>
-        Swal.fire(<?= $this->session->swetalert ?>);
-    <?php
-    }
-    ?>
-</script>

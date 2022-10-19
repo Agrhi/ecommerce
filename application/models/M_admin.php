@@ -10,21 +10,26 @@ class M_admin extends CI_Model
 		return $this->db->get('user')->num_rows();
 	}
 
-	public function aset()
+	public function pembeli($celler)
 	{
-		$sql = "SELECT SUM(stok) AS stok, SUM(bagus) AS bagus, SUM(rusak) AS rusak  FROM `aset`";
-
-		$data = $this->db->query($sql);
-
-		return $data->row();
+		if ($celler == '') {
+		} else {
+			$this->db->where('idceller', $celler);
+		}
+		return $this->db->get('pembeli')->num_rows();
 	}
 
-	public function peminjam()
+	public function penjual($celler)
 	{
-		$sql = "SELECT COUNT(*) AS nilai FROM `peminjaman`";
+		if ($celler == '') {
+		} else {
+			$this->db->where('idceller', $celler);
+		}
+		return $this->db->get('jualan')->num_rows();
+	}
 
-		$data = $this->db->query($sql);
-
-		return $data->row();
+	public function celler()
+	{
+		return $this->db->get('celler')->num_rows();
 	}
 }

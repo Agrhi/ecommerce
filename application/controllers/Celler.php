@@ -13,9 +13,10 @@ class Celler extends CI_Controller
 
 	public function index()
 	{
+		$celler = $this->session->userdata('idceller');
 		$data = [
 			'title' 		=> 'Data Agen Penjual',
-			'celler' => $this->M_celler->get_all_data()
+			'celler' => $this->M_celler->get_all_data($celler)
 		];
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/sidebar', $data);

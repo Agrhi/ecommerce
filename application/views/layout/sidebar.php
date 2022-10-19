@@ -40,7 +40,7 @@
               <span>Data Pembeli</span>
             </a>
           </li>
-
+          <?php if ($this->session->userdata('role') == 1) { ?>
           <li class="sidebar-item has-sub <?= ($title === "Management User" || $title === "Management Penjual") ? 'active' : '' ?>">
             <a href="#" class='sidebar-link'>
               <i class="fa fa-users"></i>
@@ -55,7 +55,7 @@
               </li>
             </ul>
           </li>
-          <?php if ($this->session->userdata('role') == 1) { ?>
+          
           <?php } elseif ($this->session->userdata('role') == 2) { ?>
 
           <?php } ?>

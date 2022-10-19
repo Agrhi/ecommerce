@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2022 at 06:57 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 7.4.30
+-- Generation Time: Oct 19, 2022 at 12:02 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.4.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,13 +37,6 @@ CREATE TABLE `celler` (
   `sku` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `celler`
---
-
-INSERT INTO `celler` (`idceller`, `nik`, `nama`, `namastan`, `alamat`, `nohp`, `sku`) VALUES
-(1, '1', 'cek', 'cek', 'asd', '1', 'sku-1.png');
-
 -- --------------------------------------------------------
 
 --
@@ -59,13 +52,6 @@ CREATE TABLE `jualan` (
   `gambar` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `jualan`
---
-
-INSERT INTO `jualan` (`idjualan`, `idceller`, `stok`, `harga`, `jual`, `gambar`) VALUES
-(1, 1, '1', '1', '', 'jualan-1.png');
-
 -- --------------------------------------------------------
 
 --
@@ -74,12 +60,15 @@ INSERT INTO `jualan` (`idjualan`, `idceller`, `stok`, `harga`, `jual`, `gambar`)
 
 CREATE TABLE `pembeli` (
   `idpembeli` int(11) NOT NULL,
+  `nik` varchar(16) NOT NULL,
   `nama` varchar(250) DEFAULT NULL,
   `alamat` varchar(250) DEFAULT NULL,
   `nohp` varchar(13) DEFAULT NULL,
+  `jml` varchar(10) NOT NULL,
   `idceller` int(11) DEFAULT NULL,
   `idjualan` int(11) DEFAULT NULL,
-  `ket` varchar(250) DEFAULT NULL
+  `ktp` varchar(50) DEFAULT NULL,
+  `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -103,8 +92,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`iduser`, `nama`, `username`, `pass`, `idceller`, `role`, `active`) VALUES
-(1, 'Agrhi', 'admin', 'admin', NULL, 1, 1),
-(2, 'cek', '123', '123', 1, 0, 1);
+(1, 'Agrhi', 'admin', 'admin', NULL, 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -143,13 +131,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `celler`
 --
 ALTER TABLE `celler`
-  MODIFY `idceller` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idceller` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `jualan`
 --
 ALTER TABLE `jualan`
-  MODIFY `idjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idjualan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `pembeli`
@@ -161,7 +149,7 @@ ALTER TABLE `pembeli`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `iduser` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `iduser` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
