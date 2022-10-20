@@ -113,22 +113,4 @@ class Celler extends CI_Controller
 		$this->session->set_flashdata('swetalert', '`Good job!`, `Data Berhasil Di Edit!`, `success`');
 		redirect('celler');
 	}
-
-	// public function delete($idceller = NULL)
-	// {
-	// 	//hapus gambar
-
-	// 	// $celler = $this->M_celler->get_data($idceller);
-	// 	// if ($celler->sku != "") {
-	// 	// 	unlink('./assets/gambar/' . $celler->sku);
-	// 	// }
-
-	// 	$this->db->join('celler.idceller=user.idceller');
-	// 	$this->db->join('celler.idceller=jualan.idceller');
-	// 	$this->db->where('celler.idceller',$idceller);
-	// 	$this->db->delete(array('celler','user','jualan'));
-	// }
-
-	
-
 }

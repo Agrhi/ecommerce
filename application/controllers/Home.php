@@ -8,13 +8,17 @@ class Home extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('M_penjualan');
+		$this->load->model('M_admin');
 	}
 
 	public function index()
 	{
 		$data = [
 			'title' 		=> 'Coffe',
-			'celler'			=> $this->M_penjualan->get()
+			'celler'			=> $this->M_penjualan->get(),
+			'totalpembeli'	=>	$this->M_admin->totalpembeli(),
+			'totaljualan'	=>	$this->M_admin->totaljualan(),
+			'totalpenjual'	=>	$this->M_admin->totalpenjual()
 		];
 		$this->load->view('content/landingpage/index', $data);
 	}

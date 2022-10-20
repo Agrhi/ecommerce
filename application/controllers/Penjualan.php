@@ -39,7 +39,7 @@ class Penjualan extends CI_Controller
             ];
 			
 			$jualan = $this->M_penjualan->get_data($data['idjualan']);
-			if ($jualan == '0') {
+			if ($jualan->jual == '0') {
 				$data['jual'] = '0';
 			} else {
 				$data['jual'] = $jualan->jual;

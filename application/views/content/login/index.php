@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Kopi Toratima</title>
+    <title>Login - SIPKORA</title>
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/main/app.css">
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/pages/auth.css">
-    <link rel="shortcut icon" href="<?= base_url() ?>/assets/images/logo/favicon.jpg" type="image/x-icon">
-    <link rel="shortcut icon" href="<?= base_url() ?>/assets/images/logo/favicon.jpg" type="image/png">
+    <link rel="shortcut icon" href="<?= base_url() ?>/assets/images/logo/sigi.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= base_url() ?>/assets/images/logo/sigi.png" type="image/png">
 
     <!-- CDN Js -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -29,7 +29,7 @@
             <div class="col-lg-4 col-12">
                 <div id="auth-left" style="padding: 5rem 1rem;">
                     <div style="text-align: center;">
-                        <img src="<?= base_url(); ?>/assets/images/logo/favicon.jpg" alt="Logo" width="30%">
+                        <img src="<?= base_url(); ?>/assets/images/logo/sigi.png" alt="Logo" width="20%">
                         <h4 class="auth-title text-secondary" style="align-items: center;">Login</h4>
                     </div>
                     <form role="form" action="<?= base_url('login/prosses'); ?>" method="post">

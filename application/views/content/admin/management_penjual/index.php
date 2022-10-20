@@ -16,36 +16,32 @@
             <table class="table" id="user">
                 <thead>
                     <tr>
-                        <td>No</td>
-                        <td>Nama</td>
-                        <td>Username</td>
-                        <td>Status</td>
-                        <td>Action</td>
+                        <th width="30px">No</th>
+                        <th>Nama</th>
+                        <th>Username</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <?php
-                        $no = 1;
-                        foreach ($penjual as $pjl) {
-                        ?>
-                    <tr>
-                        <td><?= $no++; ?></td>
-                        <td><?= $pjl->nama; ?></td>
-                        <td><?= $pjl->username; ?></td>
-                        <td>
-                            <?php if ($pjl->active == 1) { ?>
-                                <a type="button" href="<?= base_url('management_penjual/nonaktif/') . $pjl->iduser ?>" class="btn btn-outline-info">Aktif</a>
-                            <?php } else if ($pjl->active == 0) { ?>
-                                <a type="button" href="<?= base_url('management_penjual/aktif/') . $pjl->iduser ?>" class="btn btn-outline-danger">Tidak Aktif</a>
-                            <?php } ?>
-                        </td>
-                        <td>
-                            <button class="btn icon btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#reset<?= $pjl->iduser ?>"><i class="bi bi-arrow-clockwise"></i></button>
-                        </td>
-                    </tr>
-                <?php } ?>
-                </tr>
+                    <?php $no = 1;
+                    foreach ($penjual as $pjl) { ?>
+                        <tr>
+                            <td><?= $no++; ?></td>
+                            <td><?= $pjl->nama; ?></td>
+                            <td><?= $pjl->username; ?></td>
+                            <td class="text-center">
+                                <?php if ($pjl->active == 1) { ?>
+                                    <a type="button" href="<?= base_url('management_penjual/nonaktif/') . $pjl->iduser ?>" class="btn btn-outline-info">Aktif</a>
+                                <?php } else if ($pjl->active == 0) { ?>
+                                    <a type="button" href="<?= base_url('management_penjual/aktif/') . $pjl->iduser ?>" class="btn btn-outline-danger">Tidak Aktif</a>
+                                <?php } ?>
+                            </td>
+                            <td class="text-center">
+                                <button class="btn icon btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#reset<?= $pjl->iduser ?>"><i class="bi bi-arrow-clockwise"></i></button>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>

@@ -3,16 +3,16 @@
 
 <head>
     <meta charset="utf-8">
-    <title>E-Commerce - Home</title>
+    <title>SIPKORA - Home</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
-    <link rel="shortcut icon" href="<?= base_url(); ?>/asset/img/logo.jpg" type="image/x-icon">
-    <link rel="shortcut icon" href="<?= base_url(); ?>/asset/img/logo.jpg" type="image/png">
+    <link rel="shortcut icon" href="<?= base_url(); ?>/asset/img/sigi.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= base_url(); ?>/asset/img/sigi.png" type="image/png">
 
     <!-- Favicon -->
-    <link href="<?= base_url(); ?>/asset/img/favicon.ico" rel="icon">
+    <link href="<?= base_url(); ?>/assets/images/logo/sigi.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,7 +61,7 @@
                     <i class="fa fa-phone text-primary"></i>
                 </div>
                 <div class="ps-3">
-                    <small class="text-primary mb-0">Call Me</small>
+                    <small class="text-primary mb-0">Hubungi Kami</small>
                     <p class="text-light fs-5 mb-0">+62 822 4803 8346</p>
                 </div>
             </div>
@@ -89,15 +89,30 @@
                 </div>
             </div>
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="<?= base_url(); ?>/asset/img/carousel-2.jpg" alt="">
+                <img class="img-fluid" height="50%" src="<?= base_url(); ?>/asset/img/carousel-1.jpg" alt="">
                 <div class="owl-carousel-inner">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-lg-8">
-                                <p class="text-primary text-uppercase fw-bold mb-2">// The Best Bakery</p>
-                                <h1 class="display-1 text-light mb-4 animated slideInDown">We Bake With Passion</h1>
-                                <p class="text-light fs-5 mb-4 pb-3">Vero elitr justo clita lorem. Ipsum dolor sed stet sit diam rebum ipsum.</p>
-                                <a href="" class="btn btn-primary rounded-pill py-3 px-5">Read More</a>
+                                <!-- <p class="text-primary text-uppercase fw-bold mb-2">// The Best Bakery</p> -->
+                                <h1 class="display-1 text-light mb-4 animated slideInDown">Kopi Toratima</h1>
+                                <p class="text-light fs-5 mb-4 pb-3">Desa Pelempea Kec. Pipikoro, Kab. Sigi Sulteng</p>
+                                <!-- <a href="" class="btn btn-primary rounded-pill py-3 px-5">Gassskuyyyy</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" height="50%" src="<?= base_url(); ?>/asset/img/carousel-1.jpg" alt="">
+                <div class="owl-carousel-inner">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-lg-8">
+                                <!-- <p class="text-primary text-uppercase fw-bold mb-2">// The Best Bakery</p> -->
+                                <h1 class="display-1 text-light mb-4 animated slideInDown">Kopi Toratima</h1>
+                                <p class="text-light fs-5 mb-4 pb-3">Desa Pelempea Kec. Pipikoro, Kab. Sigi Sulteng</p>
+                                <!-- <a href="" class="btn btn-primary rounded-pill py-3 px-5">Gassskuyyyy</a> -->
                             </div>
                         </div>
                     </div>
@@ -137,11 +152,11 @@
         <div class="container">
             <br>
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <p class="text-primary text-uppercase mb-2">Coffee Market</p>
+                <p class="text-primary text-uppercase mb-2">Kopi Toratima</p>
                 <h1 class="display-6 mb-4">Pilih Kopi yang tersedia</h1>
             </div>
             <div class="row g-4">
-                <?php foreach ($celler as $cel) { ?>
+            <?php foreach ($celler as $cel) { ?>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
                             <div class="text-center p-4">
@@ -153,7 +168,7 @@
                             <div class="position-relative mt-auto">
                                 <img class="img-fluid" src="<?= base_url() ?>/assets/foto/<?= $cel->gambar; ?>" alt="">
                                 <div class="product-overlay">
-                                    <a class="btn btn-lg-square btn-outline-light rounded-circle" href="<?= base_url('/home/shope/'.$cel->idceller); ?>"><i class="fa fa-eye text-primary"></i></a>
+                                    <a class="btn btn-lg-square btn-outline-light rounded-circle" href="<?= base_url('/home/shope/'.$cel->idceller); ?>"><i class="bi bi-cart-plus-fill text-primary"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -172,22 +187,22 @@
                 <div class="col-lg-4 col-md-6 wow fadeIn" data-wow-delay="0.3s">
                     <div class="fact-item bg-light rounded text-center h-100 p-5">
                         <i class="fa fa-users fa-4x text-primary mb-4"></i>
-                        <p class="mb-2">Total Seller</p>
-                        <h1 class="display-5 mb-0" data-toggle="counter-up">20</h1>
+                        <p class="mb-2">Total Penjual</p>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up"><?= $totalpenjual; ?></h1>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeIn" data-wow-delay="0.5s">
                     <div class="fact-item bg-light rounded text-center h-100 p-5">
                         <i class="fa fa-bread-slice fa-4x text-primary mb-4"></i>
                         <p class="mb-2">Total Produk</p>
-                        <h1 class="display-5 mb-0" data-toggle="counter-up">150</h1>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up"><?= $totaljualan; ?></h1>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeIn" data-wow-delay="0.7s">
                     <div class="fact-item bg-light rounded text-center h-100 p-5">
                         <i class="fa fa-cart-plus fa-4x text-primary mb-4"></i>
                         <p class="mb-2">Total Pembeli</p>
-                        <h1 class="display-5 mb-0" data-toggle="counter-up">30</h1>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up"><?= $totalpembeli; ?></h1>
                     </div>
                 </div>
             </div>
@@ -232,12 +247,12 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
-                            <h4 class="text-light mb-4">Contact Person</h4>
+                            <h4 class="text-light mb-4">Hubungi Kami</h4>
                             <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+62 822 4803 8346</p>
                             <p class="mb-2"><i class="fa fa-envelope me-3"></i>KopiToratima@gmail.com</p>
                         </div>
                         <div class="col-lg-6 col-md-6">
-                            <h4 class="text-light mb-4">Social Media</h4>
+                            <h4 class="text-light mb-4">Sosial Media</h4>
                             <div class="d-flex pt-2">
                                 <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -247,13 +262,13 @@
                         </div>
                     </div>
                     <div class="row mt-5">
-                        <h4 class="text-light mb-4">Location</h4>
+                        <h4 class="text-light mb-4">Lokasi Kami</h4>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Pipikoro, Sigi, Sulawesi Tengah</p>
 
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <h4 class="text-light mb-4">Location</h4>
+                    <h4 class="text-light mb-4">Lokasi Kami</h4>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d510434.96775270783!2d119.6945465654027!3d-1.8345966232568864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d8ddd332f7cc6dd%3A0x464088333be952d6!2sPipikoro%2C%20Kabupaten%20Sigi%2C%20Sulawesi%20Tengah!5e0!3m2!1sid!2sid!4v1664386813910!5m2!1sid!2sid" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
@@ -269,7 +284,7 @@
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    &copy; <a href="#">Creative E-Commerce </a>, Kopi Toratima.
+                    &copy; <a href="#">Creative SIPKORA </a>, Kopi Toratima Asli Pipikoro.
                 </div>
             </div>
         </div>

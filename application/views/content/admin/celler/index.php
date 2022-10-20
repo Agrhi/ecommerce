@@ -13,36 +13,32 @@
 
 <?php } ?>
             <?php echo validation_errors(); ?>
-            <table class="table" id="aset">
+            <table class="table" id="asetr">
                 <thead>
                     <tr>
-                        <td>No</td>
-                        <td>Nama Lengkap</td>
-                        <td>Nama Toko</td>
-                        <td>Alamat</td>
-                        <td>Nomor Hp</td>
-                        <td>Action</td>
+                        <th>No</th>
+                        <th>Nama Lengkap</th>
+                        <th>Nama Toko</th>
+                        <th>Alamat</th>
+                        <th>Nomor HP</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <?php
-                        $no = 1;
-                        foreach ($celler as $cel) {
-                        ?>
-                    <tr>
-                        <td><?= $no++; ?></td>
-                        <td><?= $cel->nama; ?></td>
-                        <td><?= $cel->namastan; ?></td>
-                        <td><?= $cel->alamat; ?></td>
-                        <td><?= $cel->nohp; ?></td>
-                        <td>
-                            <button class="btn icon btn-success" type="button" data-bs-toggle="modal" data-bs-target="#edit<?= $cel->idceller ?>"><i class="bi bi-pencil"></i></button>
-                            <!-- <button class="btn icon btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#delete<= $cel->idceller ?>"><i class="fa fa-trash-alt"></i></button> -->
-                        </td>
-                    </tr>
-                <?php } ?>
-                </tr>
+                    <?php $no = 1;
+                    foreach ($celler as $cel) { ?>
+                        <tr>
+                            <td><?= $no++; ?></td>
+                            <td><?= $cel->nama; ?></td>
+                            <td><?= $cel->namastan; ?></td>
+                            <td><?= $cel->alamat; ?></td>
+                            <td><?= $cel->nohp; ?></td>
+                            <td>
+                                <button class="btn icon btn-info" type="button" data-bs-toggle="modal" data-bs-target="#detail<?= $cel->idceller ?>"><i class="bi bi-eye"></i></button>
+                                <button class="btn icon btn-success" type="button" data-bs-toggle="modal" data-bs-target="#edit<?= $cel->idceller ?>"><i class="bi bi-pencil"></i></button>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
@@ -195,6 +191,71 @@
         ?>
     </div>
 </div>
+</div>
+<?php } ?>
+<!-- End Modal -->
+
+<!-- Modal Detail -->
+<?php foreach ($celler as $cel) { ?>
+<div class="modal fade" id="detail<?= $cel->idceller ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detail Agen Penjual</h5>
+                <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="card">
+                <div class="mt-4 ms-4">
+                <div class="card card-profile card-plain">
+                        <div class="row">
+                            <div class="col-md-4 d-flex align-items-center">
+                                <div class="card card-profile card-plain">
+                                    <div class="card-body text-center bg-white shadow border-radius-lg p-3 position-relative z-index-1">
+                                        <a href="javascript:;">
+                                            <img class="w-100 h-auto border-radius-md" src="<?= base_url('assets/gambar/' . $cel->sku) ?>">
+                                        </a>
+                                        <h5 class="mt-3 mb-1 d-md-block d-none"><?= $cel->namastan ?></h5>
+                                        <p class="mb-0 text-xs font-weight-bolder text-warning text-gradient text-uppercase"><?= $cel->alamat ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8 ps-0 my-auto">
+                                <div class="card-body text-left">
+                                    <div class="row">
+                                        <div class="col-5">Nama Pemilik</div>
+                                        <div class="col-2">:</div>
+                                        <div class="col-4"><strong><?= $cel->nama ?></strong></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">NIK KTP</div>
+                                        <div class="col-2">:</div>
+                                        <div class="col-4"><strong><?= $cel->nik ?></strong></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">Nama Toko</div>
+                                        <div class="col-2">:</div>
+                                        <div class="col-4"><?= $cel->namastan ?></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">Alamat Toko</div>
+                                        <div class="col-2">:</div>
+                                        <div class="col-4"><?= $cel->alamat ?></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5">Nomor Hp</div>
+                                        <div class="col-2">:</div>
+                                        <div class="col-4"><?= $cel->nohp ?></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <?php } ?>
 <!-- End Modal -->

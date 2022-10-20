@@ -22,6 +22,28 @@ class M_pembeli extends CI_Model
 		return $data->result();
 	}
 
+	public function get_data()
+	{
+		$sql = "SELECT
+			pembeli.idpembeli,
+			celler.idceller,
+			celler.namastan,
+			pembeli.nik,
+			pembeli.nama,
+			pembeli.alamat,
+			pembeli.nohp,
+			pembeli.jml,
+			pembeli.ktp
+			FROM pembeli
+			LEFT JOIN celler ON pembeli.idceller = celler.idceller
+			WHERE pembeli.idpembeli ";
+
+
+		$data = $this->db->query($sql);
+
+		return $data->result();
+	}
+
 	public function send($data, $id)
 	{
 		$this->db->set('status', $data);

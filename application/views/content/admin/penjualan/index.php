@@ -5,39 +5,34 @@
         </div>
         <div class="card-body">
             <?php echo validation_errors(); ?>
-            <table class="table" id="user">
+            <table class="table" id="asetr">
                 <thead>
                     <tr>
-                        <td>No</td>
-                        <td>Nama Toko</td>
-                        <td>Barang</td>
-                        <td>Stok</td>
-                        <td>Harga</td>
-                        <td>Jumlah Terjual</td>
-                        <td>Action</td>
+                        <th>No</th>
+                        <th>Nama Toko</th>
+                        <th>Barang</th>
+                        <th>Stok</th>
+                        <th>Harga</th>
+                        <th>Jumlah Terjual</th>
+                        <th class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <?php
-                        $no = 1;
-                        foreach ($penjualan as $pjul) {
-                        ?>
-                    <tr>
-                        <td><?= $no++; ?></td>
-                        <td><?= $pjul->namastan; ?></td>
-                        <td>Kopi Toratima</td>
-                        <td><?= $pjul->stok; ?></td>
-                        <td><?= $pjul->harga; ?></td>
-                        <td><?= $pjul->jual; ?></td>
-                        <td>
-                            <button class="btn icon btn-success" type="button" data-bs-toggle="modal" data-bs-target="#edit<?= $pjul->idjualan ?>"><i class="bi bi-pencil"></i></button>
-                            <!-- <button class="btn icon btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#delete<= $pjul->idjualan ?>"><i class="fa fa-trash-alt"></i></button> -->
-                        </td>
-                        </td>
-                    </tr>
-                <?php } ?>
-                </tr>
+                    <?php $no = 1;
+                    foreach ($penjualan as $pjul) { ?>
+                        <tr>
+                            <td><?= $no++; ?></td>
+                            <td><?= $pjul->namastan; ?></td>
+                            <td>Kopi Toratima</td>
+                            <td><?= $pjul->stok; ?></td>
+                            <td><?= $pjul->harga; ?></td>
+                            <td><?= $pjul->jual; ?></td>
+                            <td class="text-center">
+                                <button class="btn icon btn-success" type="button" data-bs-toggle="modal" data-bs-target="#edit<?= $pjul->idjualan ?>"><i class="bi bi-pencil"></i></button>
+                                <!-- <button class="btn icon btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#delete<= $pjul->idjualan ?>"><i class="fa fa-trash-alt"></i></button> -->
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
@@ -118,6 +113,13 @@
     </div>
 <?php } ?>
  <!-- End Modal -->    
+
+<script>
+    $(document).ready(function() {
+        $('#aset').DataTable();
+        $('#asetr').DataTable();
+    });
+</script>
 
  <script>
     function bacaGambar(input) {

@@ -16,9 +16,10 @@ class Dashboard extends CI_Controller
 		$celler = $this->session->userdata('idceller');
 		$data = [
 			'title' 		=> 'Dashboard',
-			'total_user'	=>	$this->M_admin->total_user(),
+			'total_user'	=>	$this->M_admin->total_user($celler),
 			'pembeli'	=>	$this->M_admin->pembeli($celler),
 			'penjual'	=>	$this->M_admin->penjual($celler),
+			'jual'	=>	$this->M_admin->jual($celler),
 			'celler'	=>	$this->M_admin->celler(),
 		];
 		

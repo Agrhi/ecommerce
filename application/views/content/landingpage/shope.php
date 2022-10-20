@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kopi Toratima - Shope</title>
+    <title>SIPKORA - Pemesanan</title>
 
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/main/app.css" />
-    <link rel="shortcut icon" href="<?= base_url(); ?>/assets/images/logo/favicon.jpg" type="image/x-icon" />
-    <link rel="shortcut icon" href="<?= base_url(); ?>/assets/images/logo/favicon.jpg" type="image/png" />
+    <link rel="shortcut icon" href="<?= base_url(); ?>/assets/images/logo/sigi.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="<?= base_url(); ?>/assets/images/logo/sigi.png" type="image/png" />
 
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/shared/iconly.css" />
 
@@ -69,7 +69,7 @@
                                             <h3 class="text-muted font-semibold">
                                                 Nomor Hp : <?= $celler->nohp; ?>
                                             </h3>
-                                            <button class="btn btn-danger btn-lg shadow-lg mt-2" data-bs-toggle="modal" data-bs-target="#idbeli">Kembali</button>
+                                            <a href="<?= base_url('') ?>" class="btn btn-danger btn-lg shadow-lg mt-2">Kembali</a>
                                             <button class="btn btn-primary btn-lg shadow-lg mt-2" data-bs-toggle="modal" data-bs-target="#idbeli">Beli</button>
                                         </div>
                                     </div>

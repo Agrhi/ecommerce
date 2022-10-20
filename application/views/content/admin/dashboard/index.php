@@ -13,7 +13,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <h6 class="text-muted font-semibold">Jumlah Data Agen Penjual</h6>
-                                    <h3 class="font-extrabold mb-0"><?= $celler; ?></h3>
+                                    <h3 class="font-extrabold mb-0"><?= $jual; ?></h3>
                                 </div>
                             </div>
                         </div>
@@ -78,10 +78,10 @@
         <div class="card-body px-4">
             <div class="row">
                 <div class="col-md-9" style="text-align: justify;">
-                    <p>Sistem Informasi Pendataan Aset Desa atau disebut SIPEDES merupakan suatu sistem yang dapat digunakan untuk mencatat segala aset desa baik yang masih layak pakai maupun yang rusak. Sistem ini juga digunakan untuk mengarsipkan data seorang yang telah melakukan peminjaman aset, Sistem ini digunakan pada desa Nambaru Kabupaten Parigi Moutong, Provinsi Sulawesi Tengah.</p>
+                    <p>Sistem Informasi Penjualan Kopi Toratima Asli Pipikoro atau disebut SIPKORA merupakan suatu sistem yang dapat digunakan dalam melakukan pendataan penjualan Kopi Toratima. Sistem ini juga digunakan untuk memperjualbelikan Kopi Toratima Asli Pipikoro, Sistem ini digunakan pada desa Pelempea Kecamatan Pipikoro, Kabupaten Ssigi, Provinsi Sulawesi Tengah.</p>
                 </div>
                 <div class="col-md-3" style="text-align: center;">
-                    <img src="<?= base_url(); ?>/assets/images/logo/favicon.png" alt="Logo" width="60%">
+                    <img src="<?= base_url(); ?>/assets/images/logo/sigi.png" alt="Logo" width="40%">
                 </div>
             </div>
         </div>

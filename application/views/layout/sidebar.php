@@ -4,7 +4,7 @@
       <div class="sidebar-header position-relative">
         <div class="d-flex justify-content-between align-items-center">
           <div class="logo">
-            Toratima
+            SIPKORA
           </div>
         </div>
       </div>

@@ -45,4 +45,11 @@ class M_celler extends CI_Model
 		$this->db->where('idceller', $data['idceller']);
 		$this->db->delete('celler', $data);
 	}
+
+	public function get_detail($idceller)
+	{
+		$this->db->from('celler');
+		$this->db->where('idceller', $idceller);
+		return $this->db->get()->row();
+	}
 }

@@ -1,7 +1,7 @@
 <footer>
   <div class="footer clearfix text-muted">
     <div class="float-end">
-      <p>2022 &copy; Creative Team Coffe Toratima</p>
+      <p>2022 &copy; Creative Team SIPKORA</p>
     </div>
   </div>
 </footer>

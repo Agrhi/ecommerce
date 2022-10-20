@@ -20,45 +20,41 @@
             <table class="table" id="user">
                 <thead>
                     <tr>
-                        <td>No</td>
-                        <td>Nama</td>
-                        <td>Username</td>
-                        <td>Akses</td>
-                        <td>Status</td>
-                        <td>Action</td>
+                        <th width="30px">No</th>
+                        <th>Nama</th>
+                        <th>Username</th>
+                        <th>Akses</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <?php
-                        $no = 1;
-                        foreach ($user as $u) {
-                        ?>
-                    <tr>
-                        <td><?= $no++; ?></td>
-                        <td><?= $u->nama; ?></td>
-                        <td><?= $u->username; ?></td>
-                        <td>
-                            <?php if ($u->role == 1) {
-                                echo 'Admin';
-                            } else if ($u->role == 2) {
-                                echo 'Pengelolah';
-                            } ?>
-                        </td>
-                        <td>
-                            <?php if ($u->active == 1) { ?>
-                                <a type="button" href="<?= base_url('management_user/nonaktif/') . $u->iduser ?>" class="btn btn-outline-info">Aktif</a>
-                            <?php } else if ($u->active == 0) { ?>
-                                <a type="button" href="<?= base_url('management_user/aktif/') . $u->iduser ?>" class="btn btn-outline-danger">Tidak Aktif</a>
-                            <?php } ?>
-                        </td>
-                        <td>
-                            <button class="btn icon btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#edit<?= $u->iduser ?>"><i class="bi bi-pencil"></i></button>
-                            <button class="btn icon btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#delete<?= $u->iduser ?>"><i class="fa fa-trash-alt"></i></button>
-                        </td>
-                    </tr>
-                <?php } ?>
-                </tr>
+                    <?php $no = 1;
+                    foreach ($user as $u) { ?>
+                        <tr>
+                            <td><?= $no++; ?></td>
+                            <td><?= $u->nama; ?></td>
+                            <td><?= $u->username; ?></td>
+                            <td>
+                                <?php if ($u->role == 1) {
+                                    echo 'Admin';
+                                } else if ($u->role == 2) {
+                                    echo 'Pengelolah';
+                                } ?>
+                            </td>
+                            <td class="text-center">
+                                <?php if ($u->active == 1) { ?>
+                                    <a type="button" href="<?= base_url('management_user/nonaktif/') . $u->iduser ?>" class="btn btn-outline-info">Aktif</a>
+                                <?php } else if ($u->active == 0) { ?>
+                                    <a type="button" href="<?= base_url('management_user/aktif/') . $u->iduser ?>" class="btn btn-outline-danger">Tidak Aktif</a>
+                                <?php } ?>
+                            </td>
+                            <td class="text-center">
+                                <button class="btn icon btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#edit<?= $u->iduser ?>"><i class="bi bi-pencil"></i></button>
+                                <button class="btn icon btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#delete<?= $u->iduser ?>"><i class="fa fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>

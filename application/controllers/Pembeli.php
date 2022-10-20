@@ -16,7 +16,8 @@ class Pembeli extends CI_Controller
 		$celler = $this->session->userdata('idceller');
 		$data = [
 			'title' => 'Data Pembeli',
-			'pembeli' => $this->M_pembeli->get_all_data($celler)
+			'pembeli' => $this->M_pembeli->get_all_data($celler),
+			'beli' => $this->M_pembeli->get_data()
 		];
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/sidebar', $data);
