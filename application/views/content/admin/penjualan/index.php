@@ -94,7 +94,20 @@
                             </div>
                             <div class="col-sm-6 mt-3">
                                 <div class="form-group">
-                                <img src="<?= base_url('assets/foto/' . $pjul->gambar) ?>" id="gambar_load" width="200px">
+                                    <img src="<?= base_url('assets/foto/' . $pjul->gambar) ?>" id="gambar_load" width="200px">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Gambar</label>
+                                    <input type="file" name="gambar" class="form-control" id="preview_gambar" oninvalid="this.setCustomValidity('Gambar Wajib Diisi !!!')" oninput="setCustomValidity('')" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mt-3">
+                                <div class="form-group">
+                                    <img src="<?= base_url('assets/foto/' . $pjul->gambar) ?>" id="gambar_load" width="200px">
                                 </div>
                             </div>
                         </div>
@@ -112,7 +125,7 @@
         </div>
     </div>
 <?php } ?>
- <!-- End Modal -->    
+<!-- End Modal -->
 
 <script>
     $(document).ready(function() {
@@ -121,7 +134,7 @@
     });
 </script>
 
- <script>
+<script>
     function bacaGambar(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
